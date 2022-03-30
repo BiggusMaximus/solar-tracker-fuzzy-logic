@@ -8,7 +8,7 @@ VarSpeedServo servo1;
 VarSpeedServo servo2;
 
 uint8_t i, j;
-uint8_t value1, value2, value3, value4;
+uint16_t value1, value2, value3, value4;
 uint8_t avgtop, avgdown, avgright, avgleft;
 
 void setup()
@@ -28,7 +28,8 @@ void loop()
     value2 = analogRead(ldr2);
     value3 = analogRead(ldr3);
     value4 = analogRead(ldr4);
-    Serial.print("Value1: " + String(value1) + "| Value2: " + String(value2) + "| Value3: " + String(value3) + "| Value4: " + String(value4)+ "\n");
+    delay(200);
+    Serial.print("Value1: " + String(value1) + "  | Value2: " + String(value2) + "  | Value3: " + String(value3) + "  | Value4: " + String(value4)+ "\n");
     
     value1 = map(value1, 0, 1023, 0, 100);
     value2 = map(value2, 0, 1023, 0, 100);
